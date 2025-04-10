@@ -1,225 +1,385 @@
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 fade-in">
-                    <h1 class="display-4 fw-bold mb-4">Protecting Communities Through Vaccination</h1>
-                    <p class="lead mb-4">Find vaccination centers near you and keep track of your immunization schedule with our modern healthcare platform.</p>
-                    <div class="search-box">
-                        <form class="d-flex gap-2">
-                            <input type="text" class="form-control form-control-lg" placeholder="Enter your location">
-                            <button class="btn btn-primary btn-lg">Search</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-none d-lg-block">
-                    <img src="{{ asset('assets/img/vaccine.png') }}" alt="Vaccination illustration" class="img-fluid rounded-3 floating">
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Loading Overlay Start -->
+<div class="loading-overlay">
+    <div class="spinner">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!-- Loading Overlay End -->
 
-    <!-- Quick Access Services -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="service-card h-100 fade-in">
-                        <div class="card-body text-center p-5">
-                            <div class="service-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <h5 class="card-title h4 mb-3">Find Centers</h5>
-                            <p class="card-text text-muted mb-4">Locate nearby vaccination facilities with real-time availability and instant booking.</p>
-                            <a href="#" class="btn btn-outline-primary">Search Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card h-100 fade-in" style="animation-delay: 0.2s;">
-                        <div class="card-body text-center p-5">
-                            <div class="service-icon">
-                                <i class="fas fa-calendar-check"></i>
-                            </div>
-                            <h5 class="card-title h4 mb-3">Track Vaccinations</h5>
-                            <p class="card-text text-muted mb-4">Monitor your vaccination schedule and get timely reminders for upcoming doses.</p>
-                            <a href="#" class="btn btn-outline-primary">Track Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card h-100 fade-in" style="animation-delay: 0.4s;">
-                        <div class="card-body text-center p-5">
-                            <div class="service-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h5 class="card-title h4 mb-3">Statistics</h5>
-                            <p class="card-text text-muted mb-4">View real-time vaccination data and public health statistics in your area.</p>
-                            <a href="#" class="btn btn-outline-primary">View Stats</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Statistics Section -->
-    <section class="stats-section py-5">
-        <div class="container">
-            <h2 class="section-title">Impact Statistics</h2>
-            <div class="row text-center g-4">
-                <div class="col-md-3">
-                    <div class="stats-card floating">
-                        <i class="fas fa-syringe fa-2x mb-3" style="color: var(--primary-color)"></i>
-                        <h3 class="display-4 fw-bold text-gradient">1M+</h3>
-                        <p class="text-muted">Vaccinations Given</p>
+<!-- Header Start -->
+<header id="header">
+    <nav class="navbar affix-top">
+        <div id="navbar_content">
+            <div class="navbar-header">
+                <a class="navbar-brand custom-primary" href="#">
+                    <img src="/assets-2/img/logo.png" alt="logo"> Burger House
+                </a>
+                <a href="#cd-nav" class="cd-nav-trigger burger-menu-icon">
+                    <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="navbar-right">
+                    <div class="call-delivery">
+                        <img src="assets-2/img/delivery-icon.png" alt="" class="call-delivery-icon">
+                        <span class="call-delivery-number custom-primary">Call for Delivery
+                                <a href="#" target="_blank">+4 450 68 7474</a>
+                            </span>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stats-card floating" style="animation-delay: 0.2s;">
-                        <i class="fas fa-hospital-alt fa-2x mb-3" style="color: var(--primary-color)"></i>
-                        <h3 class="display-4 fw-bold text-gradient">500+</h3>
-                        <p class="text-muted">Active Centers</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stats-card floating" style="animation-delay: 0.4s;">
-                        <i class="fas fa-check-circle fa-2x mb-3" style="color: var(--primary-color)"></i>
-                        <h3 class="display-4 fw-bold text-gradient">95%</h3>
-                        <p class="text-muted">Success Rate</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="stats-card floating" style="animation-delay: 0.6s;">
-                        <i class="fas fa-headset fa-2x mb-3" style="color: var(--primary-color)"></i>
-                        <h3 class="display-4 fw-bold text-gradient">24/7</h3>
-                        <p class="text-muted">Support Available</p>
-                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a class="page-scroll" href="#header">Home</a></li>
+                        <li><a class="page-scroll" href="#menu">Menu</a></li>
+                        <li><a class="page-scroll" href="#events">Events</a></li>
+                        <li><a class="page-scroll" href="#reservation">Reservation</a></li>
+                        <li><a class="page-scroll" href="#gallery">Gallery</a></li>
+                        <li><a class="page-scroll" href="#contact">Contact Us</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
+</header>
+<!-- Header End -->
 
-    <!-- Vaccination Schedule -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">Vaccination Timeline</h2>
-            <div class="schedule-timeline">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="timeline-card h-100">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="service-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                        <i class="fas fa-baby"></i>
-                                    </div>
-                                    <h5 class="card-title h4 mb-0 ms-3">Birth to 15 Months</h5>
-                                </div>
-                                <ul class="list-unstyled">
-                                    <li class="mb-4 d-flex align-items-center">
-                                        <i class="fas fa-check-circle text-success me-3"></i>
-                                        <div>
-                                            <h6 class="mb-1">Hepatitis B (HepB)</h6>
-                                            <small class="text-muted">Birth, 1-2 months, 6 months</small>
-                                        </div>
-                                    </li>
-                                    <li class="mb-4 d-flex align-items-center">
-                                        <i class="fas fa-check-circle text-success me-3"></i>
-                                        <div>
-                                            <h6 class="mb-1">Rotavirus (RV)</h6>
-                                            <small class="text-muted">2 months, 4 months</small>
-                                        </div>
-                                    </li>
-                                    <li class="mb-4 d-flex align-items-center">
-                                        <i class="fas fa-check-circle text-success me-3"></i>
-                                        <div>
-                                            <h6 class="mb-1">DTaP</h6>
-                                            <small class="text-muted">2 months, 4 months, 6 months</small>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="timeline-card h-100">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="service-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                        <i class="fas fa-child"></i>
-                                    </div>
-                                    <h5 class="card-title h4 mb-0 ms-3">4-6 Years</h5>
-                                </div>
-                                <ul class="list-unstyled">
-                                    <li class="mb-4 d-flex align-items-center">
-                                        <i class="fas fa-check-circle text-success me-3"></i>
-                                        <div>
-                                            <h6 class="mb-1">DTaP Booster</h6>
-                                            <small class="text-muted">4-6 years</small>
-                                        </div>
-                                    </li>
-                                    <li class="mb-4 d-flex align-items-center">
-                                        <i class="fas fa-check-circle text-success me-3"></i>
-                                        <div>
-                                            <h6 class="mb-1">IPV (Polio)</h6>
-                                            <small class="text-muted">4-6 years</small>
-                                        </div>
-                                    </li>
-                                    <li class="mb-4 d-flex align-items-center">
-                                        <i class="fas fa-check-circle text-success me-3"></i>
-                                        <div>
-                                            <h6 class="mb-1">MMR</h6>
-                                            <small class="text-muted">4-6 years</small>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+<!-- Banner Start -->
+<div id="banner" class="banner">
+    <div class="banner-slider">
+        <div class="banner-slider__item">
+            <div class="banner-slider__text custom-primary">
+                <h3 class="banner-subtitle" data-aos="fade-up">It is a good time for the great taste of burgers</h3>
+                <h1 class="banner-title" data-aos="fade-up" data-aos-duration="1800">Special <span>Burger</span></h1>
+            </div>
+            <div class="banner-slider__media">
+                <img src="assets-2/img/banner/625x490.jpg" alt="" class="banner-image" data-aos="zoom-in">
+                <div class="banner-badge" data-aos="fade-right">
+                    <div class="banner-price">20% <span>Off</span></div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="banner-slider__item">
+            <div class="banner-slider__text custom-primary">
+                <h3 class="banner-subtitle" data-aos="fade-up">It is a good time for the great taste of burgers</h3>
+                <h1 class="banner-title" data-aos="fade-up" data-aos-duration="1800">Speciall <span>Burger</span></h1>
+            </div>
+            <div class="banner-slider__media">
+                <img src="assets-2/img/banner/625x490.jpg" alt="" class="banner-image" data-aos="zoom-in">
+                <div class="banner-badge" data-aos="fade-right">
+                    <div class="banner-price">20% <span>Off</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-slider__item">
+            <div class="banner-slider__text custom-primary">
+                <h3 class="banner-subtitle" data-aos="fade-up">It is a good time for the great taste of burgers</h3>
+                <h1 class="banner-title" data-aos="fade-up" data-aos-duration="1800">Specialll <span>Burger</span></h1>
+            </div>
+            <div class="banner-slider__media">
+                <img src="assets-2/img/banner/625x490.jpg" alt="" class="banner-image" data-aos="zoom-in">
+                <div class="banner-badge" data-aos="fade-right">
+                    <div class="banner-price">20% <span>Off</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner End -->
 
-    <!-- Emergency Contacts -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Emergency Support</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="emergency-card h-100">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="service-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h5 class="card-title h4 mb-1">24/7 Helpline</h5>
-                                    <p class="card-text text-muted mb-0">For immediate medical assistance</p>
-                                </div>
-                            </div>
-                            <h3 class="text-primary mb-0">1-800-VACCINE</h3>
-                        </div>
-                    </div>
+<!-- Banner Grid Start -->
+<div class="banner-grid">
+    <div class="banner-grid-row">
+        <div class="banner-grid-column" data-aos="fade-up">
+            <a href="" title="" class="banner-grid-big">
+                <div class="banner-grid-text">
+                    <h4 class="banner-grid-subject">Try it today</h4>
+                    <h3 class="banner-grid-title">Most popular banner</h3>
                 </div>
-                <div class="col-md-6">
-                    <div class="emergency-card h-100">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-4">
-                                <div class="service-icon" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h5 class="card-title h4 mb-1">Support Email</h5>
-                                    <p class="card-text text-muted mb-0">For non-emergency inquiries</p>
-                                </div>
-                            </div>
-                            <h3 class="text-primary mb-0">support@vaxportal.com</h3>
-                        </div>
-                    </div>
+                <img src="assets-2/img/banner-grid/555x390.jpg" alt="" class="banner-grid-image">
+            </a>
+        </div>
+        <div class="banner-grid-column">
+            <a href="" title="" class="banner-grid-small" data-aos="fade-up">
+                <div class="banner-grid-text">
+                    <h4 class="banner-grid-subject">Try it today</h4>
+                    <h3 class="banner-grid-title">More fun more taste</h3>
                 </div>
+                <img src="assets-2/img/banner-grid/555x180.jpg" alt="" class="banner-grid-image">
+            </a>
+            <a href="" title="" class="banner-grid-small" data-aos="fade-up">
+                <div class="banner-grid-text">
+                    <h4 class="banner-grid-subject">Try it today</h4>
+                    <h3 class="banner-grid-title">Fresh & Chili</h3>
+                </div>
+                <img src="assets-2/img/banner-grid/555x180.jpg" alt="" class="banner-grid-image">
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Banner Grid End -->
+
+<!-- Menu Slider Start -->
+<section class="section" id="menu">
+    <div class="section-header text-center">
+        <h5 class="section-label label" data-aos="fade-up">Always Tasty Burger</h5>
+        <h2 class="section-title" data-aos="fade-up">Choose & Enjoy</h2>
+        <p class="section-subtitle text-center" data-aos="fade-up">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+            Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+        </p>
+    </div>
+
+    <div id="menu-slider" class="menu-slider" data-aos="fade-up">
+        <div class="menu-slider-item">
+            <div class="menu-slider-item-image">
+                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
+            </div>
+            <div class="menu-slider-item-desc">
+                <h4 class="menu-slider-item-title">Hamburger1</h4>
+                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                <a href="single-product" class="button">Order Now</a>
             </div>
         </div>
-    </section>
+        <div class="menu-slider-item">
+            <div class="menu-slider-item-image">
+                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
+            </div>
+            <div class="menu-slider-item-desc">
+                <h4 class="menu-slider-item-title">Hamburger2</h4>
+                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                <a href="single-product" class="button">Order Now</a>
+            </div>
+        </div>
+        <div class="menu-slider-item">
+            <div class="menu-slider-item-image">
+                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
+            </div>
+            <div class="menu-slider-item-desc">
+                <h4 class="menu-slider-item-title">Hamburger3</h4>
+                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                <a href="single-product" class="button">Order Now</a>
+            </div>
+        </div>
+        <div class="menu-slider-item">
+            <div class="menu-slider-item-image">
+                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
+            </div>
+            <div class="menu-slider-item-desc">
+                <h4 class="menu-slider-item-title">Hamburger4</h4>
+                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                <a href="single-product" class="button">Order Now</a>
+            </div>
+        </div>
+        <div class="menu-slider-item">
+            <div class="menu-slider-item-image">
+                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
+            </div>
+            <div class="menu-slider-item-desc">
+                <h4 class="menu-slider-item-title">Hamburger5</h4>
+                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                <a href="single-product" class="button">Order Now</a>
+            </div>
+        </div>
+        <div class="menu-slider-item">
+            <div class="menu-slider-item-image">
+                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
+            </div>
+            <div class="menu-slider-item-desc">
+                <h4 class="menu-slider-item-title">Hamburger6</h4>
+                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                <a href="single-product" class="button">Order Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Menu Slider End -->
+
+<!-- Events Start -->
+<section class="section" id="events">
+    <div class="events">
+        <div class="events-wrapper">
+            <div class="events-item">
+                <div class="section-header">
+                    <h5 class="section-label" data-aos="fade-up">Always Tasty Burger</h5>
+                    <h2 class="section-title" data-aos="fade-up">Choose & Enjoy</h2>
+                    <p class="section-subtitle" data-aos="fade-up">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                    </p>
+                </div>
+                <img src="assets-2/img/events/575x445.jpg" alt="" class="events-item-image" data-aos="zoom-in">
+            </div>
+            <div class="events-item">
+                <div class="section-header">
+                    <h5 class="section-label" data-aos="fade-up">Always Tasty</h5>
+                    <h2 class="section-title" data-aos="fade-up">Choose & Enjoy</h2>
+                    <p class="section-subtitle" data-aos="fade-up">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                    </p>
+                </div>
+                <img src="assets-2/img/events/575x445.jpg" alt="" class="events-item-image" data-aos="zoom-in">
+            </div>
+            <div class="events-item">
+                <div class="section-header">
+                    <h5 class="section-label" data-aos="fade-up">Always</h5>
+                    <h2 class="section-title" data-aos="fade-up">Choose & Enjoy</h2>
+                    <p class="section-subtitle" data-aos="fade-up">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                    </p>
+                </div>
+                <img src="assets-2/img/events/575x445.jpg" alt="" class="events-item-image" data-aos="zoom-in">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Events End -->
+
+<!-- Gallery Start -->
+<div class="container section" id="gallery" data-aos="fade-up">
+    <div class="title-block" data-aos="fade-up">
+        <h1 class="section-title text-center">Gallery</h1>
+    </div>
+    <div id="photo_gallery" class="list1" data-aos="fade-up">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 item">
+                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                    <div class="content">
+                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <div class="zoom">
+                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-3 item">
+                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                    <div class="content">
+                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <div class="zoom">
+                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-3 item">
+                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                    <div class="content">
+                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <div class="zoom">
+                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-3 item">
+                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                    <div class="content">
+                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <div class="zoom">
+                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-3 item">
+                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                    <div class="content">
+                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <div class="zoom">
+                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-3 item">
+                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                    <div class="content">
+                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <div class="zoom">
+                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-3 item">
+                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                    <div class="content">
+                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <div class="zoom">
+                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-3 item">
+                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                    <div class="content">
+                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <div class="zoom">
+                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Gallery End -->
+
+<!-- Reservation Start -->
+<section class="section" id="reservation">
+    <div class="reservation">
+        <div class="reservation-left">
+            <img src="assets-2/img/reservation/burger.png" alt="" data-aos="fade-up">
+            <img src="assets-2/img/reservation/bottle.png" alt="" data-aos="fade-up">
+        </div>
+        <div class="reservation-center">
+            <div class="section-header text-center">
+                <h5 class="section-label" data-aos="fade-up">Reservation</h5>
+                <h2 class="section-title" data-aos="fade-up">Book Your Table</h2>
+            </div>
+            <form class="reservation-form" method="post">
+                <div class="row">
+                    <div class="col-sm-6" data-aos="fade-up">
+                        <div class="form-group form_pos">
+                            <input type="text" name="name" required="" placeholder="Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up">
+                        <div class="form-group form_pos">
+                            <input type="email" name="email" required="" placeholder="Email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up">
+                        <div class="form-group form_pos">
+                            <input type="text" name="date" required="" placeholder="Date" class="form-control" id="reserv_date">
+                        </div>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up">
+                        <div class="form-group form_pos">
+                            <input type="text" name="time" required="" placeholder="Time" class="form-control" id="reserv_time">
+                        </div>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up">
+                        <div class="form-group form_pos">
+                            <input type="number" name="people" required="" placeholder="People" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up">
+                        <button type="submit" class="button">Find a table</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="reservation-right">
+            <img src="assets-2/img/reservation/burger-food.png" alt="" data-aos="fade-up">
+        </div>
+    </div>
+</section>
+<!-- Reservation End -->

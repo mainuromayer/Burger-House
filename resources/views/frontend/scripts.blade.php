@@ -1,10 +1,15 @@
-<!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="{{ asset('lib/wow/wow.min.js') }}"></script>
-<script src="{{ asset('lib/easing/easing.min.js') }}"></script>
-<script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-<script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('lib/parallax/parallax.min.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+<!-- JavaScripts -->
+<script src="{{ asset("assets-2/js/plugins/jquery-2.1.1.min.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/bootstrap.min.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/slick.min.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/jquery.mousewheel.min.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/jquery.easing.min.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/aos.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/jquery.touchSwipe.min.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/moment.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/bootstrap-datepicker.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/bootstrap-datetimepicker.js") }}"></script>
+<script src="{{ asset("assets-2/js/plugins/jquery.fancybox.min.js") }}"></script>
+<script src="//api-maps.yandex.ru/2.1/?apikey=pdct.1.1.20181030T175834Z.133bc6bb41576943.2897484581a2a12fea17740a34279c270c29ac48&lang=en_US"></script>
+<script src="{{ asset("assets-2/js/main.js") }}"></script>

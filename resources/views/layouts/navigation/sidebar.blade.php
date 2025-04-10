@@ -1,7 +1,8 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="javascript:void(0);" class="app-brand-link">
-            <img src="{{ asset('images/SSD_white_logo.jpg') }}" alt="" width="100%">
+        <a href="javascript:void(0);" class="app-brand-link" style="color: #442a2a; font-weight: 700;">
+            <img src="{{ asset('assets-2/img/logo.png') }}" alt="" style="height: auto; width: 30px; max-width: 100%; margin-right: 8px;">
+            Burger House
         </a>
 {{--        <a href="" class="navbar-brand">--}}
 {{--            <h2 class="m-0 text-primary">Charity</h2>--}}
@@ -18,8 +19,14 @@
         <!-- Dashboards -->
         <li class="menu-item {{ Request::is('dashboard') || Request::is('dashboard/*') ? 'active' : '' }}">
             <a href="{{ route('dashboard') }}" class="menu-link ">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <i class="menu-icon tf-icons bx bxs-dashboard"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
+            </a>
+        </li>
+        <li class="menu-item {{ Request::is('homepage') || Request::is('homepage/*') ? 'active' : '' }}">
+            <a href="{{ route('homepage') }}" class="menu-link ">
+                <i class="menu-icon tf-icons bx bxs-home-circle"></i>
+                <div data-i18n="HomePage">HomePage</div>
             </a>
         </li>
 
@@ -46,6 +53,7 @@
                 <i class="menu-icon tf-icons bx bx-user-plus"></i>
                 <div data-i18n="User"> Users </div>
             </a>
+
             <ul class="menu-sub">
                 <li class="menu-item {{ Request::segment(2)== 'user' ? 'active' : '' }}">
                     <a href="{{ route('user.list') }}" class="menu-link">

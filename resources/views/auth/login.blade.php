@@ -14,12 +14,13 @@
 
                                 </span>
 
-{{--                                <span class="demo text-body fw-bold h4">--}}
-{{--                                    <img src="{{ asset('assets/img/icons/logo.png') }}" alt="" height="" width="260">--}}
-{{--                                </span>--}}
-                                <a href="" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                               <span class="demo text-body fw-bold" style="font-size: 28px">
+                                    <img src="{{ asset('assets-2/img/logo.png') }}" alt="" style="height: auto; width: 30px; max-width: 100%; margin-right: 8px;">
+                                    Burger House
+                               </span>
+                                {{-- <a href="" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
                                     <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Charity</h2>
-                                </a>
+                                </a> --}}
                             </a>
                         </div>
                         <!-- /Logo -->
@@ -38,9 +39,9 @@
                         <div class=" mb-3 form-password-toggle  {{$errors->has('password') ? 'has-error' : ''}}">
                             <div class="d-flex justify-content-between">
                                 {!! Form::label('password','Passord',['class'=>'form-label required-star']) !!}
-                                <a href="auth-forgot-password-basic.html">
+                                {{-- <a href="auth-forgot-password-basic.html">
                                     <small>Forgot Password?</small>
-                                </a>
+                                </a> --}}
                             </div>
 
                             <div class="input-group">
@@ -51,12 +52,12 @@
 
                         </div>
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="remember-me"/>
                                 <label class="form-check-label" for="remember-me"> Remember Me </label>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
                             <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
                         </div>

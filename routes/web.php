@@ -23,15 +23,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [FrontendController::class, 'home'])->name('home');
-//Route::get('/home', [FrontendController::class, 'frontend'])->name('homes');
-Route::get('/about', [FrontendController::class, 'about'])->name('about');
-Route::get('/event_page', [FrontendController::class, 'eventPage'])->name('event_page');
-Route::get('/event_details/{id}', [FrontendController::class, 'eventDetails'])->name('event_details');
-Route::get('/committee_page', [FrontendController::class, 'committeePage'])->name('committee_page');
-Route::get('/committees/{committee_type_id}', [FrontendController::class, 'committeePageByType'])->name('committee_by_type');
-
-
-
 
 Route::get( 'logout', array( LoginController::class, 'logout' ) )->name( 'logout' );
 

@@ -1,165 +1,81 @@
-<footer class="footer position-relative py-6" style="background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);">
-    <!-- Decorative shapes -->
-    <div class="position-absolute top-0 start-0 w-100 overflow-hidden" style="height: 50px;">
-        <svg viewBox="0 0 500 25" preserveAspectRatio="none" style="width: 100%; height: 100%;">
-            <path d="M0,0 L500,0 L500,25 C400,10 300,20 200,15 C100,10 0,25 0,15 Z" fill="#fff"></path>
-        </svg>
-    </div>
-
-    <div class="container position-relative">
-        <div class="row gy-5">
-            <!-- Brand Column -->
-            <div class="col-lg-4">
-                <div class="pe-lg-5">
-                    <div class="d-flex align-items-center mb-4">
-                        <i class="fas fa-shield-virus fa-2x me-2" style="color: #64b5f6;"></i>
-                        <h5 class="h3 text-white mb-0">VaxPortal</h5>
-                    </div>
-                    <p class="text-light opacity-75 mb-4">Your trusted vaccination management platform, making healthcare accessible to everyone through innovative digital solutions.</p>
-                    <div class="d-flex gap-3 mb-4">
-                        <a href="#" class="btn btn-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; transition: all 0.3s ease;">
-                            <i class="fab fa-facebook-f" style="color: #1a237e;"></i>
-                        </a>
-                        <a href="#" class="btn btn-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; transition: all 0.3s ease;">
-                            <i class="fab fa-twitter" style="color: #1a237e;"></i>
-                        </a>
-                        <a href="#" class="btn btn-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; transition: all 0.3s ease;">
-                            <i class="fab fa-instagram" style="color: #1a237e;"></i>
-                        </a>
-                        <a href="#" class="btn btn-light btn-sm rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; transition: all 0.3s ease;">
-                            <i class="fab fa-linkedin-in" style="color: #1a237e;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Services Column -->
-            <div class="col-lg-2 col-md-4">
-                <h6 class="text-white text-uppercase mb-4 pb-2 border-bottom border-light border-opacity-25">Services</h6>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-3">
-                        <a href="#" class="text-light text-opacity-75 text-decoration-none d-flex align-items-center hover-translate" style="transition: all 0.3s ease;">
-                            <i class="fas fa-chevron-right me-2 small"></i>
-                            Find Centers
-                        </a>
-                    </li>
-                    <li class="mb-3">
-                        <a href="#" class="text-light text-opacity-75 text-decoration-none d-flex align-items-center hover-translate" style="transition: all 0.3s ease;">
-                            <i class="fas fa-chevron-right me-2 small"></i>
-                            Track Vaccines
-                        </a>
-                    </li>
-                    <li class="mb-3">
-                        <a href="#" class="text-light text-opacity-75 text-decoration-none d-flex align-items-center hover-translate" style="transition: all 0.3s ease;">
-                            <i class="fas fa-chevron-right me-2 small"></i>
-                            Statistics
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- About Column -->
-            <div class="col-lg-2 col-md-4">
-                <h6 class="text-white text-uppercase mb-4 pb-2 border-bottom border-light border-opacity-25">About</h6>
-                <ul class="list-unstyled mb-0">
-                    <li class="mb-3">
-                        <a href="#" class="text-light text-opacity-75 text-decoration-none d-flex align-items-center hover-translate" style="transition: all 0.3s ease;">
-                            <i class="fas fa-chevron-right me-2 small"></i>
-                            About Us
-                        </a>
-                    </li>
-                    <li class="mb-3">
-                        <a href="#" class="text-light text-opacity-75 text-decoration-none d-flex align-items-center hover-translate" style="transition: all 0.3s ease;">
-                            <i class="fas fa-chevron-right me-2 small"></i>
-                            Contact
-                        </a>
-                    </li>
-                    <li class="mb-3">
-                        <a href="#" class="text-light text-opacity-75 text-decoration-none d-flex align-items-center hover-translate" style="transition: all 0.3s ease;">
-                            <i class="fas fa-chevron-right me-2 small"></i>
-                            Privacy Policy
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Newsletter Column -->
-            <div class="col-lg-4 col-md-8">
-                <div class="bg-white bg-opacity-10 rounded-4 p-4">
-                    <h6 class="text-white text-uppercase mb-4">Stay Updated</h6>
-                    <p class="text-light opacity-75 mb-4">Subscribe to our newsletter for the latest updates on vaccination programs and health guidelines.</p>
-                    <form class="newsletter-form">
-                        <div class="position-relative">
-                            <input type="email" class="form-control bg-transparent border-light text-white" 
-                                   placeholder="Enter your email" 
-                                   style="height: 50px; border-radius: 25px; padding-right: 120px;">
-                            <button type="submit" class="btn btn-light position-absolute end-0 top-0 h-100 px-4" 
-                                    style="border-radius: 0 25px 25px 0;">
-                                Subscribe
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<!-- Footer Start -->
+<footer id="contact">
+    <div class="footer-top" data-aos="fade-up">
+        <div class="footer-logo">
+            <img src="assets-2/img/logo-footer.png" alt="">
+            <span>Burger House</span>
         </div>
-
-        <!-- Bottom Bar -->
-        <hr class="mt-5 mb-4 border-light opacity-10">
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center text-md-start">
-                <p class="text-light opacity-75 mb-0">© 2025 VaxPortal. All rights reserved.</p>
+    </div>
+    <div class="footer-middle">
+        <p class="footer-desc" data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viver ra maecenas accumsan lacus vel facilisis. </p>
+        <div class="footer-contact">
+            <div class="footer-contact-item" data-aos="fade-up">
+                <img src="assets-2/img/icons/location.svg" alt="" class="footer-contact-icon">
+                <a class="footer-contact-text" data-fancybox="" data-src="#map-popup" onclick="$.fancybox.close()" href="javascript:;">Büyükdere Cad., 22A, Istanbul, Turkey</a>
             </div>
-            <div class="col-md-6 text-center text-md-end">
-                <div class="d-flex gap-3 justify-content-center justify-content-md-end mt-3 mt-md-0">
-                    <a href="#" class="text-light text-opacity-75 text-decoration-none small">Terms</a>
-                    <span class="text-light opacity-50">|</span>
-                    <a href="#" class="text-light text-opacity-75 text-decoration-none small">Privacy</a>
-                    <span class="text-light opacity-50">|</span>
-                    <a href="#" class="text-light text-opacity-75 text-decoration-none small">Cookies</a>
-                </div>
+            <div class="footer-contact-item" data-aos="fade-up">
+                <img src="assets-2/img/icons/email.svg" alt="" class="footer-contact-icon">
+                <a href="mailto:info@companyname.com" class="footer-contact-text">info@companyname.com</a>
             </div>
         </div>
     </div>
-
-    <style>
-        .footer {
-            position: relative;
-            padding: 6rem 0 4rem;
-        }
-        
-        .hover-translate:hover {
-            transform: translateX(5px);
-            opacity: 1 !important;
-        }
-        
-        .btn-light:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .newsletter-form .form-control {
-            background: rgba(255,255,255,0.1) !important;
-        }
-        
-        .newsletter-form .form-control:focus {
-            box-shadow: 0 0 0 0.25rem rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.5);
-        }
-        
-        .newsletter-form .form-control::placeholder {
-            color: rgba(255,255,255,0.6);
-        }
-        
-        .py-6 {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-        
-        @media (min-width: 992px) {
-            .py-6 {
-                padding-top: 6rem;
-                padding-bottom: 6rem;
-            }
-        }
-    </style>
+    <div class="footer-bottom" data-aos="fade-up">
+        <p class="footer-copyright">© Burger House 2023. All rights reserved.</p>
+        <div class="footer-social">
+            <a href="" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
 </footer>
+<!-- Footer End -->
+
+<!-- Scroll Up Start -->
+<div class="scroll-up">
+    <div class="scroll-up__icon"><i class="fa fa-arrow-up"></i></div>
+</div>
+<!-- Scroll Up End -->
+
+<!-- Yandex Map Start -->
+<div class="popup popup--sign" id="map-popup" style="display: none;">
+    <div class="popup-header">
+        <h2 class="popup-title upper">Büyükdere Cad., 22A, Istanbul, Turkey</h2>
+    </div>
+    <div class="popup-main">
+        <div id="map"></div>
+    </div>
+</div>
+<!-- Yandex Map End -->
+
+<!-- Mobile Menu Start -->
+<nav class="cd-nav-container burger-menu" id="cd-nav">
+    <div class="rmenu_header">
+        <div class="rmenu_header-left">
+            <a href="/" class="rmenu_logo" title="">
+                <img src="assets-2/img/logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="rmenu_header-right">
+            <div class="call-delivery custom-primary">
+                <span class="call-delivery-label">Call for Delivery</span>
+                <a href="#"
+                   class="call-delivery-number" target="_blank">+4 450 68 7474</a>
+            </div>
+            <div class="cd-close-nav">
+                <img src="assets-2/img/icons/close.svg" alt="close">
+            </div>
+        </div>
+    </div>
+    <ul class="rmenu_list">
+        <li><a class="page-scroll" href="#header">Home</a></li>
+        <li><a class="page-scroll" href="#menu">Menu</a></li>
+        <li><a class="page-scroll" href="#events">Events</a></li>
+        <li><a class="page-scroll" href="#reservation">Reservation</a></li>
+        <li><a class="page-scroll" href="#gallery">Gallery</a></li>
+        <li><a class="page-scroll" href="#contact">Contact Us</a></li>
+    </ul>
+</nav>
+
+<div class="cd-overlay"></div><!-- /.cd-overlay -->
+<!-- Mobile Menu End -->
