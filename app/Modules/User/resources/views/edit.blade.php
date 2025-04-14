@@ -36,7 +36,7 @@
 
                     {!! Form::hidden('id', $data->id) !!}
                     <!-- Email -->
-                    <div class="input-group row {{$errors->has('email') ? 'has-error' : ''}}">
+                    <div class="form-group row {{$errors->has('email') ? 'has-error' : ''}}">
                         {!! Form::label('email','Email:',['class'=>'col-md-3 control-label required-star']) !!}
                         <div class="col-md-9">
                             {!! Form::text('email', $data->email, ['class' => 'form-control required','id' => 'email', 'readonly' => 'true']) !!}
@@ -45,7 +45,7 @@
                     </div>
 
                     <!-- User Name -->
-                    <div class="input-group row {{$errors->has('name') ? 'has-error' : ''}}">
+                    <div class="form-group row {{$errors->has('name') ? 'has-error' : ''}}">
                         {!! Form::label('name','User Name:',['class'=>'col-md-3 control-label required-star']) !!}
                         <div class="col-md-9">
                             {!! Form::text('name', $data->name, ['class' => 'form-control required']) !!}
@@ -54,7 +54,7 @@
                     </div>
 
                     <!-- User Type -->
-                    <div class="input-group row {{$errors->has('user_type') ? 'has-error' : ''}}">
+                    <div class="form-group row {{$errors->has('user_type') ? 'has-error' : ''}}">
                         {!! Form::label('role','User Type:',['class'=>'col-md-3 control-label required-star']) !!}
                         <div class="col-md-9">
                             {!! Form::select('role', $roles, $data->role_id, ['class' => 'form-control user_type']) !!}

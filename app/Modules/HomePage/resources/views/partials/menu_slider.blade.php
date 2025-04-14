@@ -6,7 +6,7 @@
                 <h3 class="card-title pt-2 pb-2">Menu Slider</h3>
             </div>
             <div class="card-body demo-vertical-spacing">
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     <div class="col-md-12">
                         <div id="menu-slider-fields">
                             @php
@@ -31,7 +31,7 @@
                             @for ($i = 0; $i < $menu_slider_count; $i++)
                                 <div class="menu-slider-group border p-3 mb-3">
 
-                                    <div class="input-group mb-2 row has-feedback">
+                                    <div class="form-group mb-2 row has-feedback">
                                         <div id="browseimagepp_menu_slider_item_image">
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -119,7 +119,7 @@
         let html = `
                 <div class="menu-slider-group border p-3 mb-3">
 
-                    <div class="input-group mb-2 row has-feedback">
+                    <div class="form-group mb-2 row has-feedback">
                         <div id="browseimagepp_menu_slider_item_image">
                             <div class="row">
                                 <div class="col-md-12">

@@ -6,7 +6,7 @@
                 <h3 class="card-title pt-2 pb-2">Events</h3>
             </div>
             <div class="card-body demo-vertical-spacing">
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     <div class="col-md-12">
                         <div id="event-fields">
                             @php
@@ -58,7 +58,7 @@
                                     </div>
 
 
-                                    <div class="input-group mb-2 row has-feedback">
+                                    <div class="form-group mb-2 row has-feedback">
                                         <div id="browseimagepp_events_item_image">
                                             <div class="row">
                                                 <div class="col-md-12">
@@ -142,7 +142,7 @@
                         <input type="text" name="events_section_subtitle[]" class="form-control" placeholder="Enter event section subtitle">
                     </div>
 
-                    <div class="input-group mb-2 row has-feedback">
+                    <div class="form-group mb-2 row has-feedback">
                         <div id="browseimagepp_events_item_image">
                             <div class="row">
                                 <div class="col-md-12">

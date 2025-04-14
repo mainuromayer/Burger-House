@@ -17,8 +17,8 @@
     <nav class="navbar affix-top">
         <div id="navbar_content">
             <div class="navbar-header">
-                <a class="navbar-brand custom-primary" href="#">
-                    <img src="/assets-2/img/logo.png" alt="logo"> Burger House
+                <a class="navbar-brand custom-primary" href="javascript:void(0)">
+                    <img src="{{ $data['logo'] }}" alt="logo"> Burger House
                 </a>
                 <a href="#cd-nav" class="cd-nav-trigger burger-menu-icon">
                     <span><i class="fa fa-bars" aria-hidden="true"></i></span>
@@ -29,7 +29,9 @@
                     <div class="call-delivery">
                         <img src="assets-2/img/delivery-icon.png" alt="" class="call-delivery-icon">
                         <span class="call-delivery-number custom-primary">Call for Delivery
-                                <a href="#" target="_blank">+4 450 68 7474</a>
+                            <a href="tel:{{ $data['call_delivery_number'] }}" target="_blank">
+                                {{ $data['call_delivery_number'] }}
+                            </a>
                             </span>
                     </div>
                     <ul class="nav navbar-nav">
@@ -50,42 +52,32 @@
 <!-- Banner Start -->
 <div id="banner" class="banner">
     <div class="banner-slider">
-        <div class="banner-slider__item">
-            <div class="banner-slider__text custom-primary">
-                <h3 class="banner-subtitle" data-aos="fade-up">It is a good time for the great taste of burgers</h3>
-                <h1 class="banner-title" data-aos="fade-up" data-aos-duration="1800">Special <span>Burger</span></h1>
-            </div>
-            <div class="banner-slider__media">
-                <img src="assets-2/img/banner/625x490.jpg" alt="" class="banner-image" data-aos="zoom-in">
-                <div class="banner-badge" data-aos="fade-right">
-                    <div class="banner-price">20% <span>Off</span></div>
+        @foreach (($data['banner_title'] ?? []) as $index => $title)
+            <div class="banner-slider__item">
+                <div class="banner-slider__text custom-primary">
+                    <h3 class="banner-subtitle" data-aos="fade-up">
+                        {{ $data['banner_subtitle'][$index] ?? 'Your Subtitle Here' }}
+                    </h3>
+                    <h1 class="banner-title" data-aos="fade-up" data-aos-duration="1800">
+                        {{ $title }} <span>Burger</span>
+                    </h1>
+                </div>
+                <div class="banner-slider__media">
+                    <img src="{{ asset($data['banner_image'][$index] ?? 'assets-2/img/banner/625x490.jpg') }}"
+                         alt=""
+                         style="height: 425px; width: 690px; object-fit: cover;"
+                         class="banner-image"
+                         data-aos="zoom-in">
+                    @if (!empty($data['banner_price_off'][$index]))
+                        <div class="banner-badge" data-aos="fade-right">
+                            <div class="banner-price">
+                                {{ $data['banner_price_off'][$index] }}% <span>Off</span>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
-        </div>
-        <div class="banner-slider__item">
-            <div class="banner-slider__text custom-primary">
-                <h3 class="banner-subtitle" data-aos="fade-up">It is a good time for the great taste of burgers</h3>
-                <h1 class="banner-title" data-aos="fade-up" data-aos-duration="1800">Speciall <span>Burger</span></h1>
-            </div>
-            <div class="banner-slider__media">
-                <img src="assets-2/img/banner/625x490.jpg" alt="" class="banner-image" data-aos="zoom-in">
-                <div class="banner-badge" data-aos="fade-right">
-                    <div class="banner-price">20% <span>Off</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="banner-slider__item">
-            <div class="banner-slider__text custom-primary">
-                <h3 class="banner-subtitle" data-aos="fade-up">It is a good time for the great taste of burgers</h3>
-                <h1 class="banner-title" data-aos="fade-up" data-aos-duration="1800">Specialll <span>Burger</span></h1>
-            </div>
-            <div class="banner-slider__media">
-                <img src="assets-2/img/banner/625x490.jpg" alt="" class="banner-image" data-aos="zoom-in">
-                <div class="banner-badge" data-aos="fade-right">
-                    <div class="banner-price">20% <span>Off</span></div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <!-- Banner End -->
@@ -93,31 +85,24 @@
 <!-- Banner Grid Start -->
 <div class="banner-grid">
     <div class="banner-grid-row">
-        <div class="banner-grid-column" data-aos="fade-up">
-            <a href="" title="" class="banner-grid-big">
-                <div class="banner-grid-text">
-                    <h4 class="banner-grid-subject">Try it today</h4>
-                    <h3 class="banner-grid-title">Most popular banner</h3>
-                </div>
-                <img src="assets-2/img/banner-grid/555x390.jpg" alt="" class="banner-grid-image">
-            </a>
-        </div>
-        <div class="banner-grid-column">
-            <a href="" title="" class="banner-grid-small" data-aos="fade-up">
-                <div class="banner-grid-text">
-                    <h4 class="banner-grid-subject">Try it today</h4>
-                    <h3 class="banner-grid-title">More fun more taste</h3>
-                </div>
-                <img src="assets-2/img/banner-grid/555x180.jpg" alt="" class="banner-grid-image">
-            </a>
-            <a href="" title="" class="banner-grid-small" data-aos="fade-up">
-                <div class="banner-grid-text">
-                    <h4 class="banner-grid-subject">Try it today</h4>
-                    <h3 class="banner-grid-title">Fresh & Chili</h3>
-                </div>
-                <img src="assets-2/img/banner-grid/555x180.jpg" alt="" class="banner-grid-image">
-            </a>
-        </div>
+        @foreach (($data['banner_grid_title'] ?? []) as $index => $title)
+            @php
+                $subject = $data['banner_grid_subject'][$index] ?? 'Try it today';
+                $image = $data['banner_grid_image'][$index] ?? 'assets-2/img/banner-grid/555x390.jpg';
+                $isBig = $index === 0; // Assume first is big, rest are small
+            @endphp
+
+            <div class="banner-grid-column{{ $isBig ? '' : '' }}" data-aos="fade-up">
+                <a href="#" title="" class="{{ $isBig ? 'banner-grid-big' : 'banner-grid-small' }}">
+                    <div class="banner-grid-text">
+                        <h4 class="banner-grid-subject">{{ $subject }}</h4>
+                        <h3 class="banner-grid-title">{{ $title }}</h3>
+                    </div>
+                    <img src="{{ asset($image) }}" alt="" class="banner-grid-image">
+                </a>
+            </div>
+
+        @endforeach
     </div>
 </div>
 <!-- Banner Grid End -->

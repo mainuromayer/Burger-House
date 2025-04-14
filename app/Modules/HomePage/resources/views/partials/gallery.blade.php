@@ -6,7 +6,7 @@
                 <h3 class="card-title pt-2 pb-2">Gallery</h3>
             </div>
             <div class="card-body demo-vertical-spacing">
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     <div class="col-md-12">
                         <div id="gallery-fields">
                             @php
@@ -18,7 +18,7 @@
                             @endphp
                             @for ($i = 0; $i < $gallery_count; $i++)
                                 <div class="gallery-group border p-3 mb-3">
-                                    <div class="input-group mb-2 row has-feedback">
+                                    <div class="form-group mb-2 row has-feedback">
                                         <div class="col-md-12 addImages">
                                             <label class="center-block image-upload" for="photo_gallery_{{ $i }}">
                                                 <figure>
@@ -65,7 +65,7 @@
         let index = $('#gallery-fields .gallery-group').length;
         let html = `
             <div class="gallery-group border p-3 mb-3">
-                <div class="input-group mb-2 row has-feedback">
+                <div class="form-group mb-2 row has-feedback">
                     <div class="col-md-12 addImages">
                         <label class="center-block image-upload" for="photo_gallery_${index}">
                             <figure>

@@ -6,7 +6,7 @@
                 <h3 class="card-title pt-2 pb-2">Section</h3>
             </div>
             <div class="card-body demo-vertical-spacing">
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     <div class="col-md-12">
                         <div id="section-fields">
                             @php

@@ -7,7 +7,7 @@
             </div>
             <div class="card-body demo-vertical-spacing">
 
-                <div class="input-group row has-feedback">
+                <div class="form-group row has-feedback">
                     <div id="browseimagepp_footer_logo">
                         <div class="row">
                             <div class="col-md-12">
@@ -56,7 +56,7 @@
                 </div>
 
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('footer_desc', 'Footer Desc', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
                         {!! Form::text('footer_desc', old('footer_desc', $homePage->footer_desc ?? ''), [
@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('footer_contact_text', 'Footer Content Text', [
                         'class' => 'col-md-3 control-label required-star',
                     ]) !!}
@@ -78,7 +78,7 @@
                     </div>
                 </div>
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('footer_copyright', 'Footer Copyright', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
                         {!! Form::text('footer_copyright', old('footer_copyright', $homePage->footer_copyright ?? ''), [
@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('instagram', 'Header', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
                         {!! Form::text('instagram', old('instagram', $homePage->instagram ?? ''), [
@@ -98,7 +98,7 @@
                     </div>
                 </div>
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('facebook', 'Facebook', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
                         {!! Form::text('facebook', old('facebook', $homePage->facebook ?? ''), [
@@ -108,7 +108,7 @@
                     </div>
                 </div>
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('twitter', 'Twitter', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
                         {!! Form::text('twitter', old('twitter', $homePage->twitter ?? ''), [
@@ -118,7 +118,7 @@
                     </div>
                 </div>
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('whatsapp', 'WhatsApp', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
                         {!! Form::text('whatsapp', old('whatsapp', $homePage->whatsapp ?? ''), [
@@ -128,7 +128,7 @@
                     </div>
                 </div>
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('popup_title_upper', 'Popup Title Upper', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
                         {!! Form::text('popup_title_upper', old('popup_title_upper', $homePage->popup_title_upper ?? ''), [
@@ -138,7 +138,7 @@
                     </div>
                 </div>
 
-                <div class="input-group row mb-4">
+                <div class="form-group row mb-4">
                     {!! Form::label('map', 'Map', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
                         {!! Form::text('map', old('map', $homePage->map ?? ''), [

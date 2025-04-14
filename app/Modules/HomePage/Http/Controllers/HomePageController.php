@@ -18,7 +18,7 @@ class HomePageController extends Controller
     {
         $homePage = HomePage::first();
         $data = $homePage ? $homePage->toArray() : [];
-
+        
         return view('HomePage::index', compact('homePage', 'data'));
     }
 
@@ -64,43 +64,9 @@ class HomePageController extends Controller
             }
         }
     
-        // === MULTI-IMAGE FIELDS WITH INDEX MATCHING ===
-        $multiImageFields = [
-            'banner_image' => 'banner_image_base64',
-            'banner_grid_image' => 'banner_grid_image_base64',
-            'menu_slider_item_image' => 'menu_slider_item_image_base64',
-            'events_item_image' => 'events_item_image_base64',
-            'photo_gallery' => 'photo_gallery_base64',
-        ];
-    
-        foreach ($multiImageFields as $field => $inputKey) {
-            if ($request->has($inputKey) && is_array($request->$inputKey)) {
-                $existing = $homePage->$field ? json_decode($homePage->$field, true) : [];
-                $incoming = $request->$inputKey;
-                $final = [];
-    
-                foreach ($incoming as $index => $base64Img) {
-                    if ($base64Img === null) {
-                        // Keep the image if it exists
-                        $final[] = $existing[$index] ?? null;
-                    } elseif (str_starts_with($base64Img, 'data:image')) {
-                        $final[] = $handleBase64Image($base64Img, $field);
-                    } else {
-                        $final[] = $base64Img; // Already uploaded URL/path
-                    }
-                }
-    
-                $homePage->$field = json_encode($final);
-                $dataChanged = true;
-            }
-        }
-    
         // === TEXT / NON-IMAGE FIELDS ===
         $fields = [
             'call_delivery_number',
-            'banner_subtitle',
-            'banner_title',
-            'banner_price_off',
             'banner_grid_subject',
             'banner_grid_title',
             'section_label',
@@ -126,7 +92,6 @@ class HomePageController extends Controller
         foreach ($fields as $field) {
             if ($request->has($field)) {
                 $newValue = $request->$field;
-    
                 if (is_array($newValue)) {
                     $newValue = json_encode($newValue);
                 }
@@ -138,6 +103,105 @@ class HomePageController extends Controller
             }
         }
     
+        // === MULTIPLE IMAGE FIELDS ===
+    
+        // BANNER GRID IMAGES
+        if ($request->has('banner_grid_image_base64')) {
+            $gridImages = [];
+            foreach ($request->banner_grid_image_base64 as $index => $base64) {
+                $gridImages[] = !empty($base64)
+                    ? $handleBase64Image($base64, 'banner_grid')
+                    : ($request->banner_grid_image[$index] ?? null);
+            }
+    
+            $encoded = json_encode($gridImages);
+            if ($homePage->banner_grid_image !== $encoded) {
+                $homePage->banner_grid_image = $encoded;
+                $dataChanged = true;
+            }
+        }
+    
+        // BANNER IMAGES
+        if ($request->has('banner_image_base64')) {
+            $menuImages = [];
+            foreach ($request->banner_image_base64 as $index => $base64) {
+                $menuImages[] = !empty($base64)
+                    ? $handleBase64Image($base64, 'menu_slider')
+                    : ($request->banner_image[$index] ?? null);
+            }
+    
+            $encoded = json_encode($menuImages);
+            if ($homePage->banner_image !== $encoded) {
+                $homePage->banner_image = $encoded;
+                $dataChanged = true;
+            }
+        }
+    
+        // BANNER GRID IMAGES
+        if ($request->has('banner_grid_base64')) {
+            $menuImages = [];
+            foreach ($request->banner_grid_base64 as $index => $base64) {
+                $menuImages[] = !empty($base64)
+                    ? $handleBase64Image($base64, 'banner_grid')
+                    : ($request->banner_grid[$index] ?? null);
+            }
+    
+            $encoded = json_encode($menuImages);
+            if ($homePage->banner_grid !== $encoded) {
+                $homePage->banner_grid = $encoded;
+                $dataChanged = true;
+            }
+        }
+
+        // MENU SLIDER ITEM IMAGES
+        if ($request->has('menu_slider_item_image_base64')) {
+            $menuImages = [];
+            foreach ($request->menu_slider_item_image_base64 as $index => $base64) {
+                $menuImages[] = !empty($base64)
+                    ? $handleBase64Image($base64, 'menu_slider')
+                    : ($request->menu_slider_item_image[$index] ?? null);
+            }
+    
+            $encoded = json_encode($menuImages);
+            if ($homePage->menu_slider_item_image !== $encoded) {
+                $homePage->menu_slider_item_image = $encoded;
+                $dataChanged = true;
+            }
+        }
+    
+        // EVENTS ITEM IMAGES
+        if ($request->has('events_item_image_base64')) {
+            $eventImages = [];
+            foreach ($request->events_item_image_base64 as $index => $base64) {
+                $eventImages[] = !empty($base64)
+                    ? $handleBase64Image($base64, 'event')
+                    : ($request->events_item_image[$index] ?? null);
+            }
+    
+            $encoded = json_encode($eventImages);
+            if ($homePage->events_item_image !== $encoded) {
+                $homePage->events_item_image = $encoded;
+                $dataChanged = true;
+            }
+        }
+    
+        // PHOTO GALLERY IMAGES
+        if ($request->has('photo_gallery_base64')) {
+            $galleryImages = [];
+            foreach ($request->photo_gallery_base64 as $index => $base64) {
+                $galleryImages[] = !empty($base64)
+                    ? $handleBase64Image($base64, 'gallery')
+                    : ($request->photo_gallery[$index] ?? null);
+            }
+    
+            $encoded = json_encode($galleryImages);
+            if ($homePage->photo_gallery !== $encoded) {
+                $homePage->photo_gallery = $encoded;
+                $dataChanged = true;
+            }
+        }
+    
+        // === SAVE IF CHANGES ===
         if ($dataChanged) {
             $homePage->save();
             return back()->with('success', 'Home page updated successfully.');
@@ -146,6 +210,8 @@ class HomePageController extends Controller
         }
     }
     
+
+
 
 
 }

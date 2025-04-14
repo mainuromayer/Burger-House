@@ -9,7 +9,7 @@
 
                 {!! Form::hidden('id', $homePage->id ?? null) !!}
 
-                <div class="input-group row has-feedback">
+                <div class="form-group row has-feedback">
                     <div id="browseimagepp">
                         <div class="row">
                             <div class="col-md-12">

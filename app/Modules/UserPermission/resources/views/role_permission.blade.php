@@ -24,7 +24,7 @@
             ]) !!}
             <div class="card-body ">
                 <div class="pt-3">
-                    <div class=" pb-3 pt-3 input-group row {{$errors->has('user_type') ? 'has-error' : ''}}">
+                    <div class=" pb-3 pt-3 form-group row {{$errors->has('user_type') ? 'has-error' : ''}}">
                         {!! Form::label('role_id','User Type:',['class'=>'col-md-2 control-label required-star']) !!}
                         <div class="col-md-10">
                             {!! Form::select('role_id', $roles, old('role_id'), ['class' => 'form-control required user_role', 'change'=>'load_module_permission()']) !!}

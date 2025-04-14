@@ -34,7 +34,7 @@
 
                 <div class="card-body demo-vertical-spacing">
                     <!-- Email -->
-                    <div class="input-group row {{$errors->has('email') ? 'has-error' : ''}}">
+                    <div class="form-group row {{$errors->has('email') ? 'has-error' : ''}}">
                         {!! Form::label('email','Email:',['class'=>'col-md-3 control-label required-star']) !!}
                         <div class="col-md-9">
                             {!! Form::text('email', old('email'), ['class' => 'form-control required','id' => 'email']) !!}
@@ -43,7 +43,7 @@
                     </div>
 
                     <!-- User Name -->
-                    <div class="input-group row {{$errors->has('name') ? 'has-error' : ''}}">
+                    <div class="form-group row {{$errors->has('name') ? 'has-error' : ''}}">
                         {!! Form::label('name','User Name:',['class'=>'col-md-3 control-label required-star']) !!}
                         <div class="col-md-9">
                             {!! Form::text('name', old('name'), ['class' => 'form-control required']) !!}
@@ -52,7 +52,7 @@
                     </div>
 
                     <!-- Password -->
-                    <div class="input-group row {{$errors->has('password') ? 'has-error' : ''}}">
+                    <div class="form-group row {{$errors->has('password') ? 'has-error' : ''}}">
                         {!! Form::label('password','Password:',['class'=>'col-md-3 control-label required-star']) !!}
                         <div class="col-md-9">
                             {!! Form::password('password', ['class' => 'form-control required']) !!}
@@ -61,7 +61,7 @@
                     </div>
 
                     <!-- User Type -->
-                    <div class="input-group row {{$errors->has('user_type') ? 'has-error' : ''}}">
+                    <div class="form-group row {{$errors->has('user_type') ? 'has-error' : ''}}">
                         {!! Form::label('role','User Role:',['class'=>'col-md-3 control-label required-star']) !!}
                         <div class="col-md-9">
                             {!! Form::select('role', $roles, old('role'), ['class' => 'form-control required user_type']) !!}
