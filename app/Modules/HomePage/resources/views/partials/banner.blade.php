@@ -68,11 +68,9 @@
                                                                         </figure>
                                                                         <input type="hidden"
                                                                             id="banner_image_base64_{{ $i }}"
-                                                                            name="banner_image_base64[]"
-                                                                            value="">
+                                                                            name="banner_image_base64[]" value="">
                                                                         @if (!empty($banner_images[$i]))
-                                                                            <input type="hidden"
-                                                                                name="banner_image[]"
+                                                                            <input type="hidden" name="banner_image[]"
                                                                                 value="{{ $banner_images[$i] }}" />
                                                                         @endif
                                                                     </label>
@@ -89,11 +87,10 @@
                                                     </h4>
                                                     <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/
                                                         .png | Width 625PX, Height 490PX]</p>
-                                                    <span id="banner_image_err_{{ $i }}"
-                                                        class="text-danger" style="font-size: 10px;"></span>
+                                                    <span id="banner_image_err_{{ $i }}" class="text-danger"
+                                                        style="font-size: 10px;"></span>
                                                     <input type="file" class="form-control"
-                                                        name="banner_image_file[]"
-                                                        id="banner_image_{{ $i }}"
+                                                        name="banner_image_file[]" id="banner_image_{{ $i }}"
                                                         onchange="imageUploadWithCropping(this, 'banner_image_preview_{{ $i }}', 'banner_image_base64_{{ $i }}')"
                                                         size="625x490">
                                                 </div>
