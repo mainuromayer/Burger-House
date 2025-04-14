@@ -66,12 +66,26 @@ class HomeSeeder extends Seeder
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do'
             ]),
+            'events_section_label' => json_encode([
+                'Always Tasty Burger', 'Always Tasty Burger', 'Always Tasty', 'Always', 'Reservation'
+            ]),
+            'events_section_title' => json_encode([
+                'Choose & Enjoy', 'Choose & Enjoy', 'Choose & Enjoy', 'Choose & Enjoy', 'Book Your Table', 'Book Your Table'
+            ]),
+            'events_section_subtitle' => json_encode([
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+            ]),
             'events_item_image' => json_encode([
                 '/assets-2/img/events/575x445.jpg',
                 '/assets-2/img/events/575x445.jpg',
                 '/assets-2/img/events/575x445.jpg'
             ]),
-            'fancybox' => json_encode([
+            'photo_gallery' => json_encode([
                 '/assets-2/img/gallery/placeholder-1280x853.png',
                 '/assets-2/img/gallery/placeholder-1280x853.png',
                 '/assets-2/img/gallery/placeholder-1280x853.png',

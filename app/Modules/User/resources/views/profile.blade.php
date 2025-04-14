@@ -108,7 +108,7 @@
 
         </div>
     </div>
-    @include('plugins/image_upload')
+    @include('plugins/profile_image_upload')
 @endsection
 @section('footer-script')
 

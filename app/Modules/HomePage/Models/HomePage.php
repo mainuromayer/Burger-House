@@ -26,8 +26,11 @@ class HomePage extends Model
         'menu_slider_item_image',
         'menu_slider_item_title',
         'menu_slider_item_subtitle',
+        'events_section_label',
+        'events_section_title',
+        'events_section_subtitle',
         'events_item_image',
-        'fancybox',
+        'photo_gallery',
         'footer_logo',
         'footer_desc',
         'footer_contact_text',
@@ -40,6 +43,8 @@ class HomePage extends Model
         'map',
         'menu_list',
     ];
+
+    
     
 
 }

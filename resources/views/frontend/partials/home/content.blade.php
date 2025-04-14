@@ -204,9 +204,9 @@
         <div class="events-wrapper">
             <div class="events-item">
                 <div class="section-header">
-                    <h5 class="section-label" data-aos="fade-up">Always Tasty Burger</h5>
-                    <h2 class="section-title" data-aos="fade-up">Choose & Enjoy</h2>
-                    <p class="section-subtitle" data-aos="fade-up">
+                    <h5 class="events-section-label" data-aos="fade-up">Always Tasty Burger</h5>
+                    <h2 class="events-section-title" data-aos="fade-up">Choose & Enjoy</h2>
+                    <p class="events-section-subtitle" data-aos="fade-up">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
                     </p>
@@ -215,9 +215,9 @@
             </div>
             <div class="events-item">
                 <div class="section-header">
-                    <h5 class="section-label" data-aos="fade-up">Always Tasty</h5>
-                    <h2 class="section-title" data-aos="fade-up">Choose & Enjoy</h2>
-                    <p class="section-subtitle" data-aos="fade-up">
+                    <h5 class="events-section-label" data-aos="fade-up">Always Tasty</h5>
+                    <h2 class="events-section-title" data-aos="fade-up">Choose & Enjoy</h2>
+                    <p class="events-section-subtitle" data-aos="fade-up">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
                     </p>
@@ -226,9 +226,9 @@
             </div>
             <div class="events-item">
                 <div class="section-header">
-                    <h5 class="section-label" data-aos="fade-up">Always</h5>
-                    <h2 class="section-title" data-aos="fade-up">Choose & Enjoy</h2>
-                    <p class="section-subtitle" data-aos="fade-up">
+                    <h5 class="events-section-label" data-aos="fade-up">Always</h5>
+                    <h2 class="events-section-title" data-aos="fade-up">Choose & Enjoy</h2>
+                    <p class="events-section-subtitle" data-aos="fade-up">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
                     </p>

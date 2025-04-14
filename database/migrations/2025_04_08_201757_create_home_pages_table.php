@@ -15,21 +15,32 @@ return new class extends Migration
             $table->id();
             $table->string('logo');
             $table->string('call_delivery_number');
+
             $table->json('banner_subtitle')->nullable();
             $table->json('banner_title')->nullable();
             $table->json('banner_image')->nullable();
             $table->json('banner_price_off')->nullable();
+
             $table->json('banner_grid_subject')->nullable();
             $table->json('banner_grid_title')->nullable();
             $table->json('banner_grid_image')->nullable();
+
             $table->json('section_label')->nullable();
             $table->json('section_title')->nullable();
             $table->json('section_subtitle')->nullable();
+
             $table->json('menu_slider_item_image')->nullable();
             $table->json('menu_slider_item_title')->nullable();
             $table->json('menu_slider_item_subtitle')->nullable();
+
+            
+            $table->json('events_section_label')->nullable();
+            $table->json('events_section_title')->nullable();
+            $table->json('events_section_subtitle')->nullable();
             $table->json('events_item_image')->nullable();
-            $table->json('fancybox')->nullable();
+
+            $table->json('photo_gallery')->nullable();
+            
             $table->string('footer_logo');
             $table->text('footer_desc');
             $table->string('footer_contact_text');
