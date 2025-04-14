@@ -28,7 +28,7 @@ class HomePageController extends Controller
         $homePage = HomePage::first() ?? new HomePage();
         $dataChanged = false;
     
-        // Define upload directory
+        // File path
         $yearMonth = "uploads/" . date("Y") . "/" . date("m") . "/";
         $path_with_dir = config('app.upload_doc_path') . $yearMonth;
     
@@ -36,7 +36,7 @@ class HomePageController extends Controller
             mkdir($path_with_dir, 0777, true);
         }
     
-        // Base64 image processing helper
+        // Handle base64 image
         $handleBase64Image = function ($base64, $prefix = 'img') use ($path_with_dir, $yearMonth) {
             if (!empty($base64) && is_string($base64) && str_contains($base64, ',')) {
                 [, $imageData] = explode(',', $base64, 2);
@@ -64,7 +64,7 @@ class HomePageController extends Controller
             }
         }
     
-        // === MULTI IMAGE FIELDS AS JSON ARRAYS ===
+        // === MULTI-IMAGE FIELDS WITH INDEX MATCHING ===
         $multiImageFields = [
             'banner_image' => 'banner_image_base64',
             'banner_grid_image' => 'banner_grid_image_base64',
@@ -75,24 +75,27 @@ class HomePageController extends Controller
     
         foreach ($multiImageFields as $field => $inputKey) {
             if ($request->has($inputKey) && is_array($request->$inputKey)) {
-                $newPaths = [];
+                $existing = $homePage->$field ? json_decode($homePage->$field, true) : [];
+                $incoming = $request->$inputKey;
+                $final = [];
     
-                foreach ($request->$inputKey as $base64Img) {
-                    if ($path = $handleBase64Image($base64Img, $field)) {
-                        $newPaths[] = $path;
+                foreach ($incoming as $index => $base64Img) {
+                    if ($base64Img === null) {
+                        // Keep the image if it exists
+                        $final[] = $existing[$index] ?? null;
+                    } elseif (str_starts_with($base64Img, 'data:image')) {
+                        $final[] = $handleBase64Image($base64Img, $field);
+                    } else {
+                        $final[] = $base64Img; // Already uploaded URL/path
                     }
                 }
     
-                if (!empty($newPaths)) {
-                    $existingPaths = $homePage->$field ? json_decode($homePage->$field, true) : [];
-                    $mergedPaths = array_merge($existingPaths, $newPaths);
-                    $homePage->$field = json_encode($mergedPaths);
-                    $dataChanged = true;
-                }
+                $homePage->$field = json_encode($final);
+                $dataChanged = true;
             }
         }
     
-        // === TEXT FIELDS & JSON TEXT ===
+        // === TEXT / NON-IMAGE FIELDS ===
         $fields = [
             'call_delivery_number',
             'banner_subtitle',
@@ -137,11 +140,12 @@ class HomePageController extends Controller
     
         if ($dataChanged) {
             $homePage->save();
-            return back()->with('success', 'Home page content updated successfully.');
+            return back()->with('success', 'Home page updated successfully.');
         } else {
             return back()->with('info', 'No changes detected.');
         }
     }
     
+
 
 }
