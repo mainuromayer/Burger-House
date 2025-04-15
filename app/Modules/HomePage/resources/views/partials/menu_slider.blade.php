@@ -45,15 +45,13 @@
                                                                             <img src="{{ !empty($menu_slider_item_images[$i]) ? url($menu_slider_item_images[$i]) : url('/assets-2/img/menu-slider/410x270.jpg') }}"
                                                                                 class="img-responsive img-thumbnail"
                                                                                 id="menu_slider_item_image_preview_{{ $i }}"
-                                                                                width="410px" height="270px">
+                                                                                style="width:410px; height:270px; object-fit:cover;">
                                                                         </figure>
                                                                         <input type="hidden"
                                                                             id="menu_slider_item_image_base64_{{ $i }}"
-                                                                            name="menu_slider_item_image_base64[]"
-                                                                            value="">
+                                                                            name="menu_slider_item_image_base64[]" value="">
                                                                         @if (!empty($menu_slider_item_images[$i]))
-                                                                            <input type="hidden"
-                                                                                name="menu_slider_item_image[]"
+                                                                            <input type="hidden" name="menu_slider_item_image[]"
                                                                                 value="{{ $menu_slider_item_images[$i] }}" />
                                                                         @endif
                                                                     </label>
@@ -66,15 +64,14 @@
                                                 <div class="col-md-12 pb-3">
                                                     <h4 id="menu_slider_item_image_{{ $i }}">
                                                         <label for="menu_slider_item_image_{{ $i }}"
-                                                            class="required-star">Menu Slider Item Image</label>
+                                                            class="required-star">Menu Slider Image</label>
                                                     </h4>
                                                     <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/
                                                         .png | Width 410PX, Height 270PX]</p>
-                                                    <span id="menu_slider_item_image_err_{{ $i }}"
-                                                        class="text-danger" style="font-size: 10px;"></span>
+                                                    <span id="menu_slider_item_image_err_{{ $i }}" class="text-danger"
+                                                        style="font-size: 10px;"></span>
                                                     <input type="file" class="form-control"
-                                                        name="menu_slider_item_image_file[]"
-                                                        id="menu_slider_item_image_{{ $i }}"
+                                                        name="menu_slider_item_image_file[]" id="menu_slider_item_image_{{ $i }}"
                                                         onchange="imageUploadWithCropping(this, 'menu_slider_item_image_preview_{{ $i }}', 'menu_slider_item_image_base64_{{ $i }}')"
                                                         size="410x270">
                                                 </div>
@@ -114,68 +111,54 @@
 
 
 <script>
-    // Menu Slider ==============================
+    // Initialize index for unique IDs
+    let index = {{ $menu_slider_count ?? 0 }};
+
+    // Add Menu Slider
     $('#add-menu-slider').click(function() {
         let html = `
-                <div class="menu-slider-group border p-3 mb-3">
-
-                    <div class="form-group mb-2 row has-feedback">
-                        <div id="browseimagepp_menu_slider_item_image">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group row has-feedback">
-                                        <div id="browseimagepp_menu_slider_item_image">
-                                            <div class="row">
-                                                <div class="col-md-12 addImages">
-                                                    <label class="center-block image-upload" for="menu_slider_item_image_{{ $i }}">
-                                                        <figure>
-                                                            <img src="{{ !empty($menu_slider_item_images[$i]) ? url($menu_slider_item_images[$i]) : url('/assets-2/img/menu-slider/410x270.jpg') }}"
-                                                                class="img-responsive img-thumbnail"
-                                                                id="menu_slider_item_image_preview_{{ $i }}" width="410px"
-                                                                height="270px">
-                                                        </figure>
-                                                        <input type="hidden" id="menu_slider_item_image_base64_{{ $i }}"
-                                                            name="menu_slider_item_image_base64[]" value="">
-                                                        @if (!empty($menu_slider_item_images[$i]))
-                                                            <input type="hidden" name="menu_slider_item_image[]"
-                                                                value="{{ $menu_slider_item_images[$i] }}" />
-                                                        @endif
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12 pb-3">
-                                    <h4 id="menu_slider_item_image_{{ $i }}">
-                                        <label for="menu_slider_item_image_{{ $i }}" class="required-star">Menu Slider Item Image</label>
-                                    </h4>
-                                    <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/ .png | Width 410PX, Height 270PX]</p>
-                                    <span id="menu_slider_item_image_err_{{ $i }}" class="text-danger" style="font-size: 10px;"></span>
-                                    <input type="file" class="form-control" name="menu_slider_item_image_file[]"
-                                        id="menu_slider_item_image_{{ $i }}"
-                                        onchange="imageUploadWithCropping(this, 'menu_slider_item_image_preview_{{ $i }}', 'menu_slider_item_image_base64_{{ $i }}')"
-                                        size="410x270">
-                                </div>
-                            </div>
+            <div class="menu-slider-group border p-3 mb-3">
+                <div class="form-group mb-2 row has-feedback">
+                    <div class="row">
+                        <div class="col-md-12 addImages">
+                            <label class="center-block image-upload" for="menu_slider_item_image_${index}">
+                                <figure>
+                                    <img src="/assets-2/img/menu-slider/410x270.jpg"
+                                        class="img-responsive img-thumbnail"
+                                        id="menu_slider_item_image_preview_${index}" style="width:410px; height:270px; object-fit:cover;">
+                                </figure>
+                                <input type="hidden" id="menu_slider_item_image_base64_${index}" name="menu_slider_item_image_base64[]" value="">
+                            </label>
+                        </div>
+                        <div class="col-md-12 pb-3">
+                            <h4><label for="menu_slider_item_image_${index}" class="required-star">Menu Slider Image</label></h4>
+                            <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/ .png | Width 410PX, Height 270PX]</p>
+                            <span id="menu_slider_item_image_err_${index}" class="text-danger" style="font-size: 10px;"></span>
+                            <input type="file" class="form-control" name="menu_slider_item_image_file[]"
+                                id="menu_slider_item_image_${index}"
+                                onchange="imageUploadWithCropping(this, 'menu_slider_item_image_preview_${index}', 'menu_slider_item_image_base64_${index}')"
+                                size="410x270">
                         </div>
                     </div>
+                </div>
 
-                    <div class="form-group mb-2">
-                        <label>Title</label>
-                        <input type="text" name="menu_slider_item_title[]" class="form-control" placeholder="Enter menu slider title">
-                    </div>
-                    <div class="form-group mb-2">
-                        <label>Subtitle</label>
-                        <input type="text" name="menu_slider_item_subtitle[]" class="form-control" placeholder="Enter menu slider subtitle">
-                    </div>
-                    <button type="button" class="btn btn-secondary remove-menu-slider">Remove</button>
-                </div>`;
+                <div class="form-group mb-2">
+                    <label>Title</label>
+                    <input type="text" name="menu_slider_item_title[]" class="form-control" placeholder="Enter menu slider title">
+                </div>
+                <div class="form-group mb-2">
+                    <label>Subtitle</label>
+                    <input type="text" name="menu_slider_item_subtitle[]" class="form-control" placeholder="Enter menu slider subtitle">
+                </div>
+                <button type="button" class="btn btn-secondary remove-menu-slider">Remove</button>
+            </div>`;
         $('#menu-slider-fields').append(html);
+        index++; // Increment index for the next slider
     });
 
+    // Remove Menu Slider
     $(document).on('click', '.remove-menu-slider', function() {
         $(this).closest('.menu-slider-group').remove();
     });
 </script>
+

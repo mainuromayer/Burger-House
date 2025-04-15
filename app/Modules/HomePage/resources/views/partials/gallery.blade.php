@@ -25,7 +25,7 @@
                                                     <img src="{{ !empty($photo_gallery_images[$i]) ? url($photo_gallery_images[$i]) : url('/assets-2/img/gallery/placeholder-1280x853.png') }}"
                                                         class="img-responsive img-thumbnail"
                                                         id="photo_gallery_preview_{{ $i }}"
-                                                        width="1280px" height="853px">
+                                                        style="width:1280px; height:853px; object-fit:cover;">
                                                 </figure>
                                                 <input type="hidden" id="photo_gallery_base64_{{ $i }}"
                                                     name="photo_gallery_base64[]" value="">
@@ -70,7 +70,7 @@
                         <label class="center-block image-upload" for="photo_gallery_${index}">
                             <figure>
                                 <img src="{{ url('/assets-2/img/gallery/placeholder-1280x853.png') }}" class="img-responsive img-thumbnail"
-                                    id="photo_gallery_preview_${index}" width="1280px" height="853px">
+                                    id="photo_gallery_preview_${index}" style="width:1280px; height:853px; object-fit:cover;">
                             </figure>
                             <input type="hidden" id="photo_gallery_base64_${index}" name="photo_gallery_base64[]" value="">
                         </label>
