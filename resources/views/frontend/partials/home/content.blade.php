@@ -84,28 +84,74 @@
 
 <!-- Banner Grid Start -->
 <div class="banner-grid">
-    <div class="banner-grid-row">
-        @foreach (($data['banner_grid_title'] ?? []) as $index => $title)
-            @php
-                $subject = $data['banner_grid_subject'][$index] ?? 'Try it today';
-                $image = $data['banner_grid_image'][$index] ?? 'assets-2/img/banner-grid/555x390.jpg';
-                $isBig = $index === 0; // Assume first is big, rest are small
-            @endphp
 
-            <div class="banner-grid-column{{ $isBig ? '' : '' }}" data-aos="fade-up">
-                <a href="#" title="" class="{{ $isBig ? 'banner-grid-big' : 'banner-grid-small' }}">
+    <!-- First Row: 1 Big + 2 Small -->
+    <div class="banner-grid-row">
+        <div class="banner-grid-column" data-aos="fade-up">
+            <a href="" title="" class="banner-grid-big">
+                <div class="banner-grid-text">
+                    <h4 class="banner-grid-subject">{{ $data['banner_grid_subject'][0] ?? '' }}</h4>
+                    <h3 class="banner-grid-title">{{ $data['banner_grid_title'][0] ?? '' }}</h3>
+                </div>
+                <img src="{{ asset($data['banner_grid_image'][0] ?? 'src/assets/img/banner-grid/555x390.jpg') }}" style="height: 390px; width: 555px; object-fit: cover;" alt="" class="banner-grid-image">
+            </a>
+        </div>
+
+        <div class="banner-grid-column">
+            <a href="" title="" class="banner-grid-small" data-aos="fade-up">
+                <div class="banner-grid-text">
+                    <h4 class="banner-grid-subject">{{ $data['banner_grid_subject'][1] ?? '' }}</h4>
+                    <h3 class="banner-grid-title">{{ $data['banner_grid_title'][1] ?? '' }}</h3>
+                </div>
+                <img src="{{ asset($data['banner_grid_image'][1] ?? 'src/assets/img/banner-grid/555x180.jpg') }}" style="height: 180px; width: 555px; object-fit: cover;" alt="" class="banner-grid-image">
+            </a>
+
+            <a href="" title="" class="banner-grid-small" data-aos="fade-up">
+                <div class="banner-grid-text">
+                    <h4 class="banner-grid-subject">{{ $data['banner_grid_subject'][2] ?? '' }}</h4>
+                    <h3 class="banner-grid-title">{{ $data['banner_grid_title'][2] ?? '' }}</h3>
+                </div>
+                <img src="{{ asset($data['banner_grid_image'][2] ?? 'src/assets/img/banner-grid/555x180.jpg') }}" style="height: 180px; width: 555px; object-fit: cover;" alt="" class="banner-grid-image">
+            </a>
+        </div>
+    </div>
+
+    <!-- Remaining banners in 2-column layout -->
+    @php
+        $remainingSubjects = array_slice($data['banner_grid_subject'] ?? [], 3);
+        $remainingTitles = array_slice($data['banner_grid_title'] ?? [], 3);
+        $remainingImages = array_slice($data['banner_grid_image'] ?? [], 3);
+    @endphp
+
+    @for ($i = 0; $i < count($remainingSubjects); $i += 2)
+        <div class="banner-grid-row">
+            <div class="banner-grid-column" data-aos="fade-up">
+                <a href="" title="" class="banner-grid-big">
                     <div class="banner-grid-text">
-                        <h4 class="banner-grid-subject">{{ $subject }}</h4>
-                        <h3 class="banner-grid-title">{{ $title }}</h3>
+                        <h4 class="banner-grid-subject">{{ $remainingSubjects[$i] ?? '' }}</h4>
+                        <h3 class="banner-grid-title">{{ $remainingTitles[$i] ?? '' }}</h3>
                     </div>
-                    <img src="{{ asset($image) }}" alt="" class="banner-grid-image">
+                    <img src="{{ asset($remainingImages[$i] ?? 'src/assets/img/banner-grid/555x180.jpg') }}" style="height: 180px; width: 555px; object-fit: cover;" alt="" class="banner-grid-image">
                 </a>
             </div>
 
-        @endforeach
-    </div>
+            @if (isset($remainingSubjects[$i + 1]))
+                <div class="banner-grid-column" data-aos="fade-up">
+                    <a href="" title="" class="banner-grid-big">
+                        <div class="banner-grid-text">
+                            <h4 class="banner-grid-subject">{{ $remainingSubjects[$i + 1] }}</h4>
+                            <h3 class="banner-grid-title">{{ $remainingTitles[$i + 1] }}</h3>
+                        </div>
+                        <img src="{{ asset($remainingImages[$i + 1] ?? 'src/assets/img/banner-grid/555x180.jpg') }}" style="height: 180px; width: 555px; object-fit: cover;" alt="" class="banner-grid-image">
+                    </a>
+                </div>
+            @endif
+        </div>
+    @endfor
+
 </div>
 <!-- Banner Grid End -->
+
 
 <!-- Menu Slider Start -->
 <section class="section" id="menu">
