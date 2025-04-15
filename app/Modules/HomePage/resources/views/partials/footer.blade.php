@@ -8,6 +8,54 @@
             <div class="card-body demo-vertical-spacing">
 
                 <div class="form-group row has-feedback">
+                    <div id="browseimagepp_footer_background">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group row has-feedback">
+                                    <div id="browseimagepp_footer_background">
+                                        <div class="row">
+                                            <div class="col-md-12 addImages">
+                                                <label class="center-block image-upload"
+                                                    for="footer_background">
+
+                                                    <figure>
+                                                        <img src="{{ !empty($data['footer_background']) ? url($data['footer_background']) : url('/assets-2/img/1350x540.jpg') }}"
+                                                            class="img-responsive img-thumbnail"
+                                                            id="footer_background_preview" width="1350px"
+                                                            height="540px">
+                                                    </figure>
+                                                    <input type="hidden" id="footer_background_base64"
+                                                        name="footer_background_base64" value="">
+                                                    @if (!empty($data['footer_background']))
+                                                        <input type="hidden" name="footer_background"
+                                                            value="{{ $data['footer_background'] }}" />
+                                                    @endif
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 pb-3">
+                                <h4 id="footer_background">
+                                    <label for="footer_background" class="required-star">Footer
+                                        Background Image</label>
+                                </h4>
+                                <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/
+                                    .png | Width 1350PX, Height 540PX]</p>
+                                <span id="footer_background_err" class="text-danger"
+                                    style="font-size: 10px;"></span>
+                                <input type="file" class="form-control" name="footer_background"
+                                    id="footer_background"
+                                    onchange="imageUploadWithCropping(this, 'footer_background_preview', 'footer_background_base64')"
+                                    size="1350x540">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row has-feedback">
                     <div id="browseimagepp_footer_logo">
                         <div class="row">
                             <div class="col-md-12">
@@ -66,17 +114,6 @@
                     </div>
                 </div>
 
-                <div class="form-group row mb-4">
-                    {!! Form::label('footer_contact_text', 'Footer Content Text', [
-                        'class' => 'col-md-3 control-label required-star',
-                    ]) !!}
-                    <div class="col-md-9">
-                        {!! Form::text('footer_contact_text', old('footer_contact_text', $homePage->footer_contact_text ?? ''), [
-                            'class' => 'form-control required',
-                            'placeholder' => 'Footer Content Text',
-                        ]) !!}
-                    </div>
-                </div>
 
                 <div class="form-group row mb-4">
                     {!! Form::label('footer_copyright', 'Footer Copyright', ['class' => 'col-md-3 control-label required-star']) !!}
@@ -88,6 +125,24 @@
                     </div>
                 </div>
 
+                <div class="form-group row mb-4">
+                    {!! Form::label('location', 'Location', ['class' => 'col-md-3 control-label required-star']) !!}
+                    <div class="col-md-9">
+                        {!! Form::text('location', old('location', $homePage->location ?? ''), [
+                            'class' => 'form-control required',
+                            'placeholder' => 'Location',
+                        ]) !!}
+                    </div>
+                </div>
+                <div class="form-group row mb-4">
+                    {!! Form::label('email', 'Email', ['class' => 'col-md-3 control-label required-star']) !!}
+                    <div class="col-md-9">
+                        {!! Form::text('email', old('email', $homePage->email ?? ''), [
+                            'class' => 'form-control required',
+                            'placeholder' => 'Email',
+                        ]) !!}
+                    </div>
+                </div>
                 <div class="form-group row mb-4">
                     {!! Form::label('instagram', 'Header', ['class' => 'col-md-3 control-label required-star']) !!}
                     <div class="col-md-9">
@@ -128,25 +183,7 @@
                     </div>
                 </div>
 
-                <div class="form-group row mb-4">
-                    {!! Form::label('popup_title_upper', 'Popup Title Upper', ['class' => 'col-md-3 control-label required-star']) !!}
-                    <div class="col-md-9">
-                        {!! Form::text('popup_title_upper', old('popup_title_upper', $homePage->popup_title_upper ?? ''), [
-                            'class' => 'form-control required',
-                            'placeholder' => 'Enter Title Upper Text',
-                        ]) !!}
-                    </div>
-                </div>
 
-                <div class="form-group row mb-4">
-                    {!! Form::label('map', 'Map', ['class' => 'col-md-3 control-label required-star']) !!}
-                    <div class="col-md-9">
-                        {!! Form::text('map', old('map', $homePage->map ?? ''), [
-                            'class' => 'form-control required',
-                            'placeholder' => 'Enter Map',
-                        ]) !!}
-                    </div>
-                </div>
 
             </div>
         </div>

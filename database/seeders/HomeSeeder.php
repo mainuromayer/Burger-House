@@ -83,6 +83,8 @@ class HomeSeeder extends Seeder
             'events_item_image' => json_encode([
                 '/assets-2/img/events/575x445.jpg',
                 '/assets-2/img/events/575x445.jpg',
+                '/assets-2/img/events/575x445.jpg',
+                '/assets-2/img/events/575x445.jpg',
                 '/assets-2/img/events/575x445.jpg'
             ]),
             'photo_gallery' => json_encode([
@@ -95,16 +97,16 @@ class HomeSeeder extends Seeder
                 '/assets-2/img/gallery/placeholder-1280x853.png',
                 '/assets-2/img/gallery/placeholder-1280x853.png'
             ]),
-            'footer_logo' => '/assets-2/img/reservation/burger.png',
+            'footer_background' => '/assets-2/img/1350x540.jpg',
+            'footer_logo' => 'assets-2/img/logo-footer.png',
             'footer_desc' => 'Your trusted platform for quality services.',
-            'footer_contact_text' => 'Contact Us Now!',
-            'footer_copyright' => '© 2025 Burger House',
+            'footer_copyright' => '© Burger House 2025. All rights reserved.',
+            'location' => '123 Burger Street, Food City, USA',
+            'email' => 'contact@burgerhouse.com',
             'instagram' => 'https://instagram.com/',
             'facebook' => 'https://facebook.com/',
             'twitter' => 'https://twitter.com/',
             'whatsapp' => '+1234567890',
-            'popup_title_upper' => 'Special Offer! Limited Time Only',
-            'map' => 'map-link-here',
             'menu_list' => json_encode(['header', 'menu', 'events', 'reservation', 'gallery', 'contact']),
         ]);
     }

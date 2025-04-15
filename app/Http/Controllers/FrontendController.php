@@ -30,7 +30,18 @@ class FrontendController extends Controller
                 'banner_grid_subject',
                 'banner_grid_title',
                 'banner_grid_image',
-                // Add more as needed
+                'section_label',
+                'section_title',
+                'section_subtitle',
+                'menu_slider_item_image',
+                'menu_slider_item_title',
+                'menu_slider_item_subtitle',
+                'events_section_label',
+                'events_section_title',
+                'events_section_subtitle',
+                'events_item_image',
+                'photo_gallery',
+                'menu_list'
             ];
     
             foreach ($jsonFields as $field) {
@@ -43,4 +54,8 @@ class FrontendController extends Controller
         }
     }
 
+
+    public function reservation (Request $request){
+        // ...
+    }
 }

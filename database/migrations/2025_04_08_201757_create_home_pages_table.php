@@ -41,16 +41,19 @@ return new class extends Migration
 
             $table->json('photo_gallery')->nullable();
             
+            $table->string('footer_background');
             $table->string('footer_logo');
             $table->text('footer_desc');
-            $table->string('footer_contact_text');
             $table->string('footer_copyright');
+
+            $table->string('location')->nullable();
+            $table->string('email')->nullable();
+
             $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('whatsapp')->nullable();
-            $table->string('popup_title_upper')->nullable();
-            $table->string('map')->nullable();
+
             $table->json('menu_list')->nullable();
             $table->timestamps();
         });

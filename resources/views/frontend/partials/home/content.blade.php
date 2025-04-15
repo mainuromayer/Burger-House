@@ -156,75 +156,29 @@
 <!-- Menu Slider Start -->
 <section class="section" id="menu">
     <div class="section-header text-center">
-        <h5 class="section-label label" data-aos="fade-up">Always Tasty Burger</h5>
-        <h2 class="section-title" data-aos="fade-up">Choose & Enjoy</h2>
+        <h5 class="section-label label" data-aos="fade-up">{{ $data['section_label'][0] ?? '' }}</h5>
+        <h2 class="section-title" data-aos="fade-up">{{ $data['section_title'][0] ?? '' }}</h2>
         <p class="section-subtitle text-center" data-aos="fade-up">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
-            Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+            {{ $data['section_subtitle'][0] ?? '' }}
         </p>
     </div>
 
+
     <div id="menu-slider" class="menu-slider" data-aos="fade-up">
-        <div class="menu-slider-item">
-            <div class="menu-slider-item-image">
-                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
+        @foreach ($data['menu_slider_item_title'] as $index => $title)
+            <div class="menu-slider-item">
+                <div class="menu-slider-item-image">
+                    <img src="{{ asset($data['menu_slider_item_image'][$index] ?? 'assets-2/img/menu-slider/410x270.jpg') }}" style="height: 270px; width: 410px; object-fit: cover;" alt="" class="menu-slider-item-burger">
+                </div>
+                <div class="menu-slider-item-desc">
+                    <h4 class="menu-slider-item-title">{{ $title }}</h4>
+                    <p class="menu-slider-item-subtitle">{{ $data['menu_slider_item_subtitle'][$index] }}</p>
+                    <a href="single-product" class="button">Order Now</a>
+                </div>
             </div>
-            <div class="menu-slider-item-desc">
-                <h4 class="menu-slider-item-title">Hamburger1</h4>
-                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                <a href="single-product" class="button">Order Now</a>
-            </div>
-        </div>
-        <div class="menu-slider-item">
-            <div class="menu-slider-item-image">
-                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
-            </div>
-            <div class="menu-slider-item-desc">
-                <h4 class="menu-slider-item-title">Hamburger2</h4>
-                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                <a href="single-product" class="button">Order Now</a>
-            </div>
-        </div>
-        <div class="menu-slider-item">
-            <div class="menu-slider-item-image">
-                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
-            </div>
-            <div class="menu-slider-item-desc">
-                <h4 class="menu-slider-item-title">Hamburger3</h4>
-                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                <a href="single-product" class="button">Order Now</a>
-            </div>
-        </div>
-        <div class="menu-slider-item">
-            <div class="menu-slider-item-image">
-                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
-            </div>
-            <div class="menu-slider-item-desc">
-                <h4 class="menu-slider-item-title">Hamburger4</h4>
-                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                <a href="single-product" class="button">Order Now</a>
-            </div>
-        </div>
-        <div class="menu-slider-item">
-            <div class="menu-slider-item-image">
-                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
-            </div>
-            <div class="menu-slider-item-desc">
-                <h4 class="menu-slider-item-title">Hamburger5</h4>
-                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                <a href="single-product" class="button">Order Now</a>
-            </div>
-        </div>
-        <div class="menu-slider-item">
-            <div class="menu-slider-item-image">
-                <img src="assets-2/img/menu-slider/410x270.jpg" alt="" class="menu-slider-item-burger">
-            </div>
-            <div class="menu-slider-item-desc">
-                <h4 class="menu-slider-item-title">Hamburger6</h4>
-                <p class="menu-slider-item-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                <a href="single-product" class="button">Order Now</a>
-            </div>
-        </div>
+        @endforeach
+
+
     </div>
 </section>
 <!-- Menu Slider End -->
@@ -233,39 +187,18 @@
 <section class="section" id="events">
     <div class="events">
         <div class="events-wrapper">
+            @foreach ($data['events_item_image'] as $index => $events_item_image)
             <div class="events-item">
                 <div class="section-header">
-                    <h5 class="events-section-label" data-aos="fade-up">Always Tasty Burger</h5>
-                    <h2 class="events-section-title" data-aos="fade-up">Choose & Enjoy</h2>
+                    <h5 class="events-section-label" data-aos="fade-up">{{ $data['events_section_label'][$index] }}</h5>
+                    <h2 class="events-section-title" data-aos="fade-up">{{ $data['events_section_title'][$index] }}</h2>
                     <p class="events-section-subtitle" data-aos="fade-up">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                        {{ $data['events_section_subtitle'][$index] }}
                     </p>
                 </div>
-                <img src="assets-2/img/events/575x445.jpg" alt="" class="events-item-image" data-aos="zoom-in">
+                <img src="{{ asset($events_item_image ?? 'assets-2/img/events/575x445.jpg') }}" style="height: 575px; width: 445px; object-fit: cover;" alt="" class="events-item-image" data-aos="zoom-in">
             </div>
-            <div class="events-item">
-                <div class="section-header">
-                    <h5 class="events-section-label" data-aos="fade-up">Always Tasty</h5>
-                    <h2 class="events-section-title" data-aos="fade-up">Choose & Enjoy</h2>
-                    <p class="events-section-subtitle" data-aos="fade-up">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
-                    </p>
-                </div>
-                <img src="assets-2/img/events/575x445.jpg" alt="" class="events-item-image" data-aos="zoom-in">
-            </div>
-            <div class="events-item">
-                <div class="section-header">
-                    <h5 class="events-section-label" data-aos="fade-up">Always</h5>
-                    <h2 class="events-section-title" data-aos="fade-up">Choose & Enjoy</h2>
-                    <p class="events-section-subtitle" data-aos="fade-up">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
-                    </p>
-                </div>
-                <img src="assets-2/img/events/575x445.jpg" alt="" class="events-item-image" data-aos="zoom-in">
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -278,86 +211,19 @@
     </div>
     <div id="photo_gallery" class="list1" data-aos="fade-up">
         <div class="row">
+            @foreach ($data['photo_gallery'] as $index => $photo_gallery)
             <div class="col-md-4 col-lg-3 item">
-                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
+                <a href="{{ asset($photo_gallery ?? 'assets-2/img/gallery/placeholder-1280x853.png') }}" class="block fancybox" data-fancybox-group="fancybox">
                     <div class="content">
-                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
+                        <img src="{{ asset($photo_gallery ?? 'assets-2/img/gallery/placeholder-285x277.png') }}" style="height: 285px; width: 277px; object-fit: cover;" alt="sample">
                         <div class="zoom">
                             <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4 col-lg-3 item">
-                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
-                    <div class="content">
-                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
-                        <div class="zoom">
-                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 item">
-                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
-                    <div class="content">
-                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
-                        <div class="zoom">
-                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 item">
-                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
-                    <div class="content">
-                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
-                        <div class="zoom">
-                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 item">
-                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
-                    <div class="content">
-                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
-                        <div class="zoom">
-                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 item">
-                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
-                    <div class="content">
-                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
-                        <div class="zoom">
-                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 item">
-                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
-                    <div class="content">
-                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
-                        <div class="zoom">
-                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4 col-lg-3 item">
-                <a href="assets-2/img/gallery/placeholder-1280x853.png" class="block fancybox" data-fancybox-group="fancybox">
-                    <div class="content">
-                        <img src="assets-2/img/gallery/placeholder-285x277.png" alt="sample">
-                        <div class="zoom">
-                            <span class="zoom_icon"><i class="fa fa-search-plus"></i></span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
+
         </div>
     </div>
 </div>

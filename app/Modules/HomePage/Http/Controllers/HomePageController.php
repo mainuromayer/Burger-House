@@ -53,6 +53,7 @@ class HomePageController extends Controller
         $singleImageFields = [
             'logo' => 'logo_base64',
             'footer_logo' => 'footer_logo_base64',
+            'footer_background' => 'footer_background_base64',
         ];
     
         foreach ($singleImageFields as $field => $inputKey) {
@@ -78,14 +79,13 @@ class HomePageController extends Controller
             'events_section_title',
             'events_section_subtitle',
             'footer_desc',
-            'footer_contact_text',
             'footer_copyright',
+            'location',
+            'email',
             'instagram',
             'facebook',
             'twitter',
             'whatsapp',
-            'popup_title_upper',
-            'map',
             'menu_list',
         ];
     

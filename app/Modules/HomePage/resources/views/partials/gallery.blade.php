@@ -22,10 +22,10 @@
                                         <div class="col-md-12 addImages">
                                             <label class="center-block image-upload" for="photo_gallery_{{ $i }}">
                                                 <figure>
-                                                    <img src="{{ !empty($photo_gallery_images[$i]) ? url($photo_gallery_images[$i]) : url('/assets-2/img/gallery/placeholder-1280x853.png') }}"
+                                                    <img src="{{ !empty($photo_gallery_images[$i]) ? url($photo_gallery_images[$i]) : url('/assets-2/img/gallery/placeholder-285x277.png') }}"
                                                         class="img-responsive img-thumbnail"
                                                         id="photo_gallery_preview_{{ $i }}"
-                                                        style="width:1280px; height:853px; object-fit:cover;">
+                                                        style="width:285px; height:277px; object-fit:cover;">
                                                 </figure>
                                                 <input type="hidden" id="photo_gallery_base64_{{ $i }}"
                                                     name="photo_gallery_base64[]" value="">
@@ -39,12 +39,12 @@
                                             <h4>
                                                 <label for="photo_gallery_{{ $i }}" class="required-star">Gallery Image</label>
                                             </h4>
-                                            <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/ .png | Width 1280PX, Height 853PX]</p>
+                                            <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/ .png | Width 285PX, Height 277PX]</p>
                                             <span id="photo_gallery_err_{{ $i }}" class="text-danger" style="font-size: 10px;"></span>
                                             <input type="file" class="form-control" name="photo_gallery_file[]"
                                                 id="photo_gallery_{{ $i }}"
                                                 onchange="imageUploadWithCropping(this, 'photo_gallery_preview_{{ $i }}', 'photo_gallery_base64_{{ $i }}')"
-                                                size="1280x853">
+                                                size="285x277">
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-secondary remove-gallery">Remove</button>
@@ -69,8 +69,8 @@
                     <div class="col-md-12 addImages">
                         <label class="center-block image-upload" for="photo_gallery_${index}">
                             <figure>
-                                <img src="{{ url('/assets-2/img/gallery/placeholder-1280x853.png') }}" class="img-responsive img-thumbnail"
-                                    id="photo_gallery_preview_${index}" style="width:1280px; height:853px; object-fit:cover;">
+                                <img src="{{ url('/assets-2/img/gallery/placeholder-285x277.png') }}" class="img-responsive img-thumbnail"
+                                    id="photo_gallery_preview_${index}" style="width:285px; height:277px; object-fit:cover;">
                             </figure>
                             <input type="hidden" id="photo_gallery_base64_${index}" name="photo_gallery_base64[]" value="">
                         </label>
@@ -79,12 +79,12 @@
                         <h4>
                             <label for="photo_gallery_${index}" class="required-star">Gallery Image</label>
                         </h4>
-                        <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/ .png | Width 1280PX, Height 853PX]</p>
+                        <p class="text-success fw-bold small">[File Format: *.jpg/ .jpeg/ .png | Width 285PX, Height 277PX]</p>
                         <span id="photo_gallery_err_${index}" class="text-danger" style="font-size: 10px;"></span>
                         <input type="file" class="form-control" name="photo_gallery_file[]"
                             id="photo_gallery_${index}"
                             onchange="imageUploadWithCropping(this, 'photo_gallery_preview_${index}', 'photo_gallery_base64_${index}')"
-                            size="1280x853">
+                            size="285x277">
                     </div>
                 </div>
                 <button type="button" class="btn btn-secondary remove-gallery">Remove</button>
